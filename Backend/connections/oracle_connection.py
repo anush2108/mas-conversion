@@ -1,5 +1,6 @@
 # connections/oracle_connection.py
 import oracledb
+oracledb.init_oracle_client(lib_dir=None)
 
 def test_oracle_connection_custom(details):
     if getattr(details, "sid", None):
@@ -21,6 +22,7 @@ def test_oracle_connection_custom(details):
 
 
 import oracledb
+oracledb.init_oracle_client(lib_dir=None)
 from utils.credentials_store import load_credentials
 
 def get_oracle_connection(details=None):
