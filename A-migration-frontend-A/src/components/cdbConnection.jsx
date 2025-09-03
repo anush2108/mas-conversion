@@ -1,19 +1,20 @@
 // src/components/cdbConnection.jsx
 import PouchDB from 'pouchdb-browser';
 
-const couchdbUrl = process.env.COUCHDB_URL; // ensure REACT_APP_ prefix
+// Hardcoded CouchDB URL and credentials for testing
+const couchdbUrl = "https://couchdb-route-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com";
+const username = "admin";
+const password = "changeme";
 const dbName = "transaction";
 
-if (!couchdbUrl) {
-  throw new Error("REACT_APP_COUCHDB_URL is not defined in .env");
-}
-
-const db = new PouchDB(
-  `https://admin:changeme@${couchdbUrl.replace(/\/$/, '')}/${dbName}`,
-  {
-    skip_setup: false
+// Create PouchDB instance with Basic Auth
+const db = new PouchDB(`${couchdbUrl.replace(/\/$/, '')}/${dbName}`, {
+  skip_setup: false,
+  fetch: (url, opts) => {
+    opts.headers.set('Authorization', 'Basic ' + btoa(`${username}:${password}`));
+    return PouchDB.fetch(url, opts);
   }
-);
+});
 
 // Optional: test connection
 db.info()
