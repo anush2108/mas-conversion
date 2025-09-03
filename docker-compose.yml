@@ -1,0 +1,41 @@
+#docker-compose.yml
+version: "3.9"
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    platform: linux/arm64
+    ports:
+      - "8000:8000"
+    depends_on:
+      - couchdb
+    environment:
+      - COUCHDB_URL=http://admin:admin@couchdb:5984
+  frontend:
+    build:
+      context: ./A-migration-frontend-A
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+  couchdb:
+    image: couchdb:3.3
+    container_name: couchdb
+    ports:
+      - "5984:5984"
+    environment:
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=admin
+  couchdb-init:
+    image: curlimages/curl:7.85.0
+    container_name: couchdb-init
+    depends_on:
+      - couchdb
+    entrypoint: ["/bin/sh", "-c", "/init.sh"]
+    volumes:
+      - ./init.sh:/init.sh:ro
+    environment:
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=admin
