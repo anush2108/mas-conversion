@@ -8,9 +8,9 @@ import os
 import traceback
 from utils.couchdb import get_user_by_email, update_user_password, get_email_from_auth_session
 
-COUCHDB_URL = os.getenv("COUCHDB_URL", "http://localhost:5984")
+COUCHDB_URL = os.getenv("COUCHDB_URL", "http://couchdb-route-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com")
 COUCHDB_ADMIN = os.getenv("COUCHDB_ADMIN", "admin")
-COUCHDB_PASSWORD = os.getenv("COUCHDB_PASSWORD", "admin")
+COUCHDB_PASSWORD = os.getenv("COUCHDB_PASSWORD", "changeme")
 
 class UserSignup(BaseModel):
     email: str
