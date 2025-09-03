@@ -1,6 +1,6 @@
 import logging
 import oracledb
-oracledb.init_oracle_client(lib_dir=None)
+# oracledb.init_oracle_client(lib_dir=None)
 from typing import Dict
 from fastapi import APIRouter, Query, HTTPException
 from pydantic import BaseModel, Field
