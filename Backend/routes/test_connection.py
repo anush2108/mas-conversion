@@ -48,7 +48,7 @@ def try_connect(details: DBConnectionRequest) -> dict:
                 return {"status": "error", "message": "Either SID or SERVICE_NAME must be provided for Oracle."}
 
             # Attempt connection
-            conn = oracledb.connect(user=details.username, password=details.password, dsn=dsn, mode=oracledb.DEFAULT_AUTH, thick_mode=False)
+            conn = oracledb.connect(user=details.username, password=details.password, dsn=dsn, mode=oracledb.DEFAULT_AUTH)
             
             # Test the connection with a simple query
             cursor = conn.cursor()
