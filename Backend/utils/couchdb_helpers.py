@@ -9,8 +9,8 @@ logger = logging.getLogger(__name__)
 
 # Load from env
 COUCHDB_USER = os.getenv("COUCHDB_USER", "admin")
-COUCHDB_PASSWORD = os.getenv("COUCHDB_PASSWORD", "admin")
-COUCHDB_URL = os.getenv("COUCHDB_URL", f"http://{COUCHDB_USER}:{COUCHDB_PASSWORD}@localhost:5984")
+COUCHDB_PASSWORD = os.getenv("COUCHDB_PASSWORD", "changeme")
+COUCHDB_URL = os.getenv("COUCHDB_URL", f"http://{COUCHDB_USER}:{COUCHDB_PASSWORD}@couchdb-route-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com")
 
 def save_migration_status_to_couchdb(transaction_id: str, new_status_update: dict, schema: str, max_retries=5):
     """
