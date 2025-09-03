@@ -18,7 +18,7 @@ const MigrationStatusPage = () => {
   useEffect(() => {
     if (!currentMigration) {
       axios
-        .get("http://localhost:8000/current-migration")
+        .get("https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/current-migration")
         .then((res) => setCurrentMigration(res.data))
         .catch((err) => {
           setError(err.response?.data?.detail || "No Conversion running");
@@ -33,7 +33,7 @@ const MigrationStatusPage = () => {
 
     const fetchStatus = () => {
       axios
-        .get(`http://localhost:8000/migration-status/${currentMigration.transaction_id}`, {
+        .get(`https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/migration-status/${currentMigration.transaction_id}`, {
           params: {
             source_type: currentMigration.source_type,
             schema: currentMigration.schema,
