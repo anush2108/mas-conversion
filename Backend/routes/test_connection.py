@@ -7,6 +7,7 @@ from utils.credentials_store import save_credentials, load_credentials
 
 import ibm_db
 import oracledb
+oracledb.init_oracle_client(lib_dir=None)
 import pyodbc
 
 router = APIRouter()
