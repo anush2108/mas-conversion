@@ -47,4 +47,4 @@ def get_oracle_connection(details=None):
     else:
         dsn = oracledb.makedsn(details["host"], int(details["port"]), sid=details.get("sid"))
 
-    return oracledb.connect(user=details["username"], password=details["password"], dsn=dsn, mode=oracledb.DEFAULT_AUTH, thick_mode=False)
+    return oracledb.connect(user=details["username"], password=details["password"], dsn=dsn, mode=oracledb.DEFAULT_AUTH)
