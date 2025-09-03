@@ -6,9 +6,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-COUCHDB_URL = os.getenv("COUCHDB_URL", "http://localhost:5984")
+COUCHDB_URL = os.getenv("COUCHDB_URL", "http://couchdb-route-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com")
 COUCHDB_ADMIN = os.getenv("COUCHDB_ADMIN", "admin")
-COUCHDB_PASSWORD = os.getenv("COUCHDB_PASSWORD", "admin")
+COUCHDB_PASSWORD = os.getenv("COUCHDB_PASSWORD", "changeme")
 
 async def get_user_by_email(email: str):
     """Get user document by email"""
