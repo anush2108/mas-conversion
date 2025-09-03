@@ -32,7 +32,7 @@ const TriggerMigration = () => {
   const [migrationLogs, setMigrationLogs] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const triggerApiPrefix = "http://localhost:8000/triggers";
+  const triggerApiPrefix = "https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/triggers";
 
   const fetchTriggers = async (schema) => {
     setSelectedSchema(schema);
