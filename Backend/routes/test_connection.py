@@ -7,7 +7,7 @@ from utils.credentials_store import save_credentials, load_credentials
 
 import ibm_db
 import oracledb
-oracledb.init_oracle_client(lib_dir=None)
+# oracledb.init_oracle_client(lib_dir=None)
 import pyodbc
 
 router = APIRouter()
@@ -48,7 +48,7 @@ def try_connect(details: DBConnectionRequest) -> dict:
                 return {"status": "error", "message": "Either SID or SERVICE_NAME must be provided for Oracle."}
 
             # Attempt connection
-            conn = oracledb.connect(user=details.username, password=details.password, dsn=dsn)
+            conn = oracledb.connect(user=details.username, password=details.password, dsn=dsn, mode=oracledb.DEFAULT_AUTH, thick_mode=False)
             
             # Test the connection with a simple query
             cursor = conn.cursor()
