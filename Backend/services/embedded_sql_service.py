@@ -3,6 +3,7 @@
 
 import os
 import oracledb
+oracledb.init_oracle_client(lib_dir=None)
 from typing import List, Dict, Any, Set, Tuple
 
 from connections.oracle_connection import get_oracle_connection
