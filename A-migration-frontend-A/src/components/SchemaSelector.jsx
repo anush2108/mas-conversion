@@ -16,7 +16,7 @@ const SchemaSelector = ({ sourceDbType, selectedSchema, onSchemaSelect }) => {
 
     const apiPath = sourceDbType.toLowerCase() === "oracle" ? "/o_schemas" : "/s_schemas";
 
-    fetch(`http://localhost:8000${apiPath}`)
+    fetch(`https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com${apiPath}`)
       .then((res) => res.json())
       .then((data) => {
         setSchemas(data);
