@@ -22,7 +22,7 @@ const Sidebar = () => {
   const handleMigrationStatusClick = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.get("http://localhost:8000/current-migration");
+      const res = await axios.get("https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/current-migration");
       setCurrentMigration(res.data);
       setModalOpen(true);
       setNotif(null);
