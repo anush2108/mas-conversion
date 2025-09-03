@@ -29,16 +29,13 @@ def try_connect(details: DBConnectionRequest) -> dict:
     db_type = details.db_type.lower()
     try:
         if db_type == "oracle":
-            # Handle both SID and Service Name connections
             if details.connection_type == "sid" and details.sid:
-                # SID connection
                 dsn = (
                     f"(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST={details.host})(PORT={details.port}))"
                     f"(CONNECT_DATA=(SID={details.sid})))"
                 )
                 print(f"[🔌 ORACLE SID DSN] {dsn}")
             elif details.connection_type == "service_name" and details.service_name:
-                # Service Name connection
                 dsn = (
                     f"(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST={details.host})(PORT={details.port}))"
                     f"(CONNECT_DATA=(SERVICE_NAME={details.service_name})))"
@@ -46,19 +43,25 @@ def try_connect(details: DBConnectionRequest) -> dict:
                 print(f"[🔌 ORACLE Service Name DSN] {dsn}")
             else:
                 return {"status": "error", "message": "Either SID or SERVICE_NAME must be provided for Oracle."}
+        
+            try:
+                conn = oracledb.connect(
+                    user=details.username,
+                    password=details.password,
+                    dsn=dsn
+                )
+                cursor = conn.cursor()
+                cursor.execute("SELECT 1 FROM DUAL")
+                result = cursor.fetchone()
+                cursor.close()
+                conn.close()
+        
+                return {"status": "success", "message": "Oracle connection successful." if result else "Query returned no rows."}
+            except Exception as e:
+                error_msg = str(e)
+                print(f"[❌ ORACLE CONNECTION ERROR] {error_msg}")
+                return {"status": "error", "message": f"Oracle connection failed: {error_msg}"}
 
-            # Attempt connection
-            conn = oracledb.connect(user=details.username, password=details.password, dsn=dsn, mode=oracledb.DEFAULT_AUTH)
-            
-            # Test the connection with a simple query
-            cursor = conn.cursor()
-            cursor.execute("SELECT 1 FROM DUAL")
-            result = cursor.fetchone()
-            cursor.close()
-            conn.close()
-            
-            if result:
-                return {"status": "success", "message": "Oracle connection successful."}
 
         elif db_type == "sql":
             conn_str = (
