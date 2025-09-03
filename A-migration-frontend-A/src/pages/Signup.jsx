@@ -20,7 +20,7 @@ const Signup = () => {
     if (!accepted) return;
 
     try {
-      const res = await fetch("http://localhost:8000/auth/signup", {
+      const res = await fetch("https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
