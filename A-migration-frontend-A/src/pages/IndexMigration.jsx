@@ -32,7 +32,7 @@ const IndexMigration = () => {
   const [migrationLogs, setMigrationLogs] = useState([]);
   const [migrating, setMigrating] = useState(false);
 
-  const indexApiPrefix = "http://localhost:8000/indexes";
+  const indexApiPrefix = "https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/indexes";
 
   const fetchIndexes = async (schema) => {
     setSelectedSchema(schema);
