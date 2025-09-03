@@ -104,6 +104,7 @@ const SourceConnection = ({
       ...sourceDetails,
       connection_type: oracleConnectionType,
     };
+    console.log("Test Data ",payload)
     try {
       const response = await fetch("https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/test-connection", {
         method: "POST",
