@@ -1,5 +1,6 @@
 import logging
 import oracledb
+oracledb.init_oracle_client(lib_dir=None)
 from fastapi import HTTPException
 from connections.oracle_connection import get_oracle_connection
 from utils.credentials_store import get_source_credentials
