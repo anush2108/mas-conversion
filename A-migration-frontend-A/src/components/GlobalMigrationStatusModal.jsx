@@ -22,7 +22,7 @@ const GlobalMigrationStatusModal = () => {
     const fetchStatus = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8000/migration-status/${activeTransactionId}`,
+          `https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/migration-status/${activeTransactionId}`,
           {
             params: {
               source_type: currentMigration.source_type,
