@@ -1,0 +1,3 @@
+-- VIEW: MAXIMO.RECONATTRCLAUSE
+CREATE OR REPLACE VIEW "MAXIMO"."RECONATTRCLAUSE" AS
+select reconruleclause.andor, reconruleclause.assetattributename, reconruleclause.assetclassstructid, reconruleclause.assetobjectname, reconruleclause.closeparentheses, reconruleclause.dpaattributename, reconruleclause.dpaclassstructid, reconruleclause.dpaobjectname, reconruleclause.dpaunitattribute, reconruleclause.openparentheses, reconruleclause.reconruleclauseid, reconruleclause.recordcompoperator, reconruleclause.rowstamp, reconruleclause.rulename, reconruleclause.ruletype, reconruleclause.sequencenum from reconruleclause where ruletype='ATTRIBUTE'

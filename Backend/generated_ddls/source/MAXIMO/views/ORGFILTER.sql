@@ -1,0 +1,29 @@
+-- VIEW: MAXIMO.ORGFILTER
+CREATE OR REPLACE VIEW "MAXIMO"."ORGFILTER" AS
+select siteauth.orgid, maxuser.loginid as userid, groupuser.userid as maxuser, applicationauth.app from siteauth, groupuser, maxgroup, applicationauth, maxuser where groupuser.groupname=siteauth.groupname  
+					and groupuser.groupname=maxgroup.groupname 
+					and maxgroup.independent = 1  
+					and siteauth.groupname = applicationauth.groupname
+					and maxuser.userid = groupuser.userid
+					union all 
+					(
+						select a.orgid, mxu.loginid as userid, b.userid as maxuser, c1.app
+						from siteauth a, groupuser b, maxgroup m, maxuser mxu
+						left outer join applicationauth c1 on
+						c1.groupname in (select groupname from applicationauth where applicationauth.app = c1.app) 
+						where  b.groupname=a.groupname  
+						and b.groupname=m.groupname 
+						and m.independent = 0
+						and mxu.userid = b.userid
+						and exists 
+						(
+							select 1 
+							from  maxgroup m2, applicationauth c, groupuser d, maxuser m3  
+							where  d.userid = b.userid  
+							and m3.userid = d.userid
+							and d.groupname = m2.groupname 
+							and d.groupname = c.groupname 
+							and  m2.independent = 0 
+							and ((c.app = c1.app) or c1.app is null)  
+						) 
+					)

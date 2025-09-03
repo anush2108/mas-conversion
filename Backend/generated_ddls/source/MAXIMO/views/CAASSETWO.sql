@@ -1,0 +1,3 @@
+-- VIEW: MAXIMO.CAASSETWO
+CREATE OR REPLACE VIEW "MAXIMO"."CAASSETWO" AS
+select asset.siteid, asset.orgid, asset.location, asset.assetnum, asset.description, asset.assettype, asset.priority, asset.assethealth, asset.installdate, workorder.wonum, workorder.worktype, workorder.statusdate, workorder.pmnextduedate from asset,workorder where asset.assetnum=workorder.assetnum and asset.siteid=workorder.siteid and workorder.istask=0 and workorder.status in (select value from synonymdomain where domainid='WOSTATUS' and maxvalue in ('CLOSE', 'COMP')) and exists(select 1 from worktype where worktype.orgid = workorder.orgid and worktype.woclass = workorder.woclass and worktype.worktype=workorder.worktype and ahcondassess=1)

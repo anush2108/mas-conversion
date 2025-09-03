@@ -1,0 +1,3 @@
+-- VIEW: MAXIMO.RECONCOMPFLTRDPA
+CREATE OR REPLACE VIEW "MAXIMO"."RECONCOMPFLTRDPA" AS
+select reconcompfilter.alnvalue, reconcompfilter.andor, reconcompfilter.assetattributename, reconcompfilter.assetclassstructid, reconcompfilter.assetobjectname, reconcompfilter.closeparentheses, reconcompfilter.dpaattributename, reconcompfilter.dpaclassstructid, reconcompfilter.dpaobjectname, reconcompfilter.filtertype, reconcompfilter.openparentheses, reconcompfilter.operator, reconcompfilter.reconcompfilterid, reconcompfilter.rowstamp, reconcompfilter.rulename, reconcompfilter.sequencenum from reconcompfilter where filtertype='DEPLOYED'

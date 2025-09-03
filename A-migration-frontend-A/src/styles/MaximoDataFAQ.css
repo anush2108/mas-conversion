@@ -1,0 +1,147 @@
+:root {
+  --faq-accent: #0f62fe;
+}
+
+.maximo-faq-main {
+  min-height: 90vh;
+  margin-left: 0rem;
+  
+  padding: 0;
+  display: flex;
+  
+}
+
+.maximo-faq-outer {
+  width: 100vw;
+  max-width: 1700px;
+  margin: 0;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(60, 71, 90, 0.07), 0 1.5px 4px rgba(60, 71, 90, 0.07);
+  border-radius: 13px;
+  padding: 56px 6vw 42px 6vw;
+  box-sizing: border-box;
+}
+
+.maximo-faq-title {
+  color: var(--faq-accent);
+  margin-bottom: 15px;
+  font-weight: 700;
+
+  /* Reduced from 2.4rem to 2rem */
+  font-size: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.maximo-faq-subtitle {
+  color: #393939;
+  margin-bottom: 8px;
+
+  /* Reduced from ~1rem to 0.85rem */
+  font-size: 1rem;
+}
+
+/* FAQ LIST */
+.maximo-faq-list {
+  margin-top: 38px;
+}
+
+.maximo-faq-row + .maximo-faq-row {
+  border-top: 1px solid #dbeafe;
+}
+
+.maximo-faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+
+  /* Reduced font size from 1.33rem to 1.1rem */
+  font-size: 1.1rem;
+
+  color: #0a3871;
+  padding: 23px 0 23px 2px;
+  transition: background-color 0.1s;
+  font-weight: 600;
+  border-radius: 3px;
+  user-select: text;
+  min-height: 62px;
+}
+
+.maximo-faq-question.open,
+.maximo-faq-question:hover {
+  background-color: #edf4fe;
+}
+
+.maximo-faq-qtext {
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.maximo-faq-question svg {
+  flex-shrink: 0;
+  margin-left: 18px;
+  color: var(--faq-accent);
+  transition: color 0.18s;
+}
+
+.maximo-faq-question.open svg {
+  color: #0051c3;
+}
+
+/* ANSWER PANEL */
+.maximo-faq-answer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.36s cubic-bezier(0.41, 0, 0.2, 1);
+  background: #f9fbfd;
+  border-left: 3px solid var(--faq-accent);
+  border-radius: 0 0 7px 7px;
+  box-sizing: border-box;
+  padding: 0 0;
+}
+
+.maximo-faq-answer.open {
+  transition: max-height 0.36s cubic-bezier(0.41, 0, 0.2, 1);
+  padding: 4px 4px 50px 0; /* or use 'padding: 1rem 1rem 20px 0;' */
+  /* You can also adjust top/right padding as needed */
+}
+
+.maximo-faq-answer-content {
+  margin-left: 27px;
+
+  /* Reduced from 1.08rem to 0.9rem */
+  font-size: 0.9rem;
+
+  color: #222d41;
+  padding-top: 13px;
+  padding-bottom: 6px;
+  max-width: 1100px;
+}
+
+/* Responsive for medium/small screens */
+@media (max-width: 1300px) {
+  .maximo-faq-outer {
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
+  .maximo-faq-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .maximo-faq-outer {
+    padding: 18px 5vw 12px 5vw;
+    border-radius: 7px;
+  }
+  .maximo-faq-title {
+    font-size: 1.2rem;
+  }
+  .maximo-faq-list {
+    margin-top: 19px;
+  }
+}

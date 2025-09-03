@@ -1,0 +1,3 @@
+-- VIEW: MAXIMO.DPACDISPLAY
+CREATE OR REPLACE VIEW "MAXIMO"."DPACDISPLAY" AS
+select dpadisplay.nodeid,dpadisplay.displayid,dpadisplay.displaytype,dpadisplay.displaysize, dpadisplay.maxhorzresolution,dpadisplay.maxvertresolution,dpadisplay.colordepthbit,dpadisplay.serialnumber, dpadisplay.assettag,dpadisplay.makemodel,dpadisplay.manufacturer,dpadisplay.description,dpadisplay.createdate, dpadisplay.changedate,dpadisplay.rowstamp,dpammanuvariant.manufacturername as cmanufacturer, dpammanuvariant.manufacturervar,dpammanuvariant.dpammanuvariantid,dpammanuvariant.rowstamp as rowstamp1 from dpadisplay,dpammanuvariant where dpadisplay.manufacturer=dpammanuvariant.manufacturervar

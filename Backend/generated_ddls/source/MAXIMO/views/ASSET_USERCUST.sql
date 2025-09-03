@@ -1,0 +1,10 @@
+-- VIEW: MAXIMO.ASSET_USERCUST
+CREATE OR REPLACE VIEW "MAXIMO"."ASSET_USERCUST" AS
+SELECT
+assetlocusercust.addperson, assetlocusercust.assetlocusercustid, assetlocusercust.assetnum,
+assetlocusercust.iscustodian, assetlocusercust.isprimary, assetlocusercust.isuser, assetlocusercust.location,
+assetlocusercust.modifyperson, assetlocusercust.multiid, assetlocusercust.orgid, assetlocusercust.personid,
+assetlocusercust.removeperson, assetlocusercust.rowstamp, assetlocusercust.siteid,
+assetlocusercust.willbecustodian, assetlocusercust.willbeprimary, assetlocusercust.willbeuser
+FROM assetlocusercust
+WHERE assetnum IS NOT NULL AND addperson = 0

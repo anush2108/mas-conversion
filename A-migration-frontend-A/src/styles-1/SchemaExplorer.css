@@ -1,0 +1,471 @@
+/* SchemaExplorer.css - IBM DB2 Cloud Style */
+
+.db2-cloud-interface {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0 2rem;
+  margin: 0;
+  gap: 0;
+}
+
+.nav-tab {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #525252;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-tab:hover {
+  color: #161616;
+  background-color: #e8e8e8;
+}
+
+.nav-tab.active {
+  color: #0f62fe;
+  border-bottom-color: #0f62fe;
+  background-color: #ffffff;
+  font-weight: 500;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 1rem 2rem;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Top Controls */
+.top-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.search-wrapper {
+  flex: 1;
+  max-width: 400px;
+}
+
+.global-search {
+  width: 100%;
+}
+
+.refresh-btn {
+  margin-left: 1rem;
+}
+
+/* Panels Container */
+.panels-container {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Individual Panels */
+.panel {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.schemas-panel {
+  flex: 0 0 320px;
+}
+
+.tables-panel {
+  flex: 0 0 400px;
+}
+
+.definition-panel {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Panel Headers */
+.panel-header {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f4f4f4;
+  min-height: 48px;
+}
+
+.panel-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #161616;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.new-table-btn {
+  margin-right: 0.5rem;
+}
+
+/* Panel Content */
+.panel-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Table Container */
+.table-container {
+  flex: 1;
+  overflow: auto;
+  min-height: 0;
+}
+
+/* Data Tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.scrollable {
+  overflow-y: auto;
+  max-height: 60vh; /* or as needed */
+}
+
+.data-table th {
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: #525252;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.data-table th:first-child {
+  width: 40px;
+  padding: 0.75rem 0.5rem;
+}
+
+.data-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  vertical-align: middle;
+}
+
+.data-table td:first-child {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+}
+
+.data-table tr:hover {
+  background-color: #f8f8f8;
+}
+
+.data-table tr.selected-row {
+  background-color: #e8f4fd;
+}
+
+.data-table tr.selected-row:hover {
+  background-color: #d0e8ff;
+}
+
+/* Clickable elements */
+.schema-name,
+.table-name.clickable,
+.column-name {
+  color: #0f62fe;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.schema-name:hover,
+.table-name.clickable:hover,
+.column-name:hover {
+  text-decoration: underline;
+}
+
+/* Sort Icons */
+.sort-icon {
+  margin-left: 0.5rem;
+  opacity: 0.6;
+}
+
+/* Panel Footers */
+.panel-footer {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f4f4f4;
+  font-size: 0.75rem;
+  color: #525252;
+}
+
+/* Action Header */
+.action-header {
+  padding: 0.75rem 1rem;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.action-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #525252;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Definition Table Specific */
+.definition-table th,
+.definition-table td {
+  padding: 0.5rem 1rem;
+}
+
+.definition-table th:last-child,
+.definition-table td:last-child {
+  width: 40px;
+  text-align: center;
+}
+
+/* Empty State */
+.empty-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  color: #525252;
+}
+
+.empty-state p {
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+}
+
+/* Loading Container */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Migration Controls */
+.migration-controls {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 1000;
+}
+
+.migrate-schema-btn,
+.migrate-tables-btn {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* View Data Button */
+.view-data-btn {
+  margin: 1rem;
+  align-self: flex-start;
+}
+
+/* Migration Logs */
+.migration-logs {
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.log-entry {
+  margin-bottom: 0.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .panels-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .schemas-panel,
+  .tables-panel,
+  .definition-panel {
+    flex: none;
+    min-height: 300px;
+  }
+  
+  .migration-controls {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    flex-direction: row;
+    margin: 1rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .nav-tabs {
+    padding: 0 1rem;
+    overflow-x: auto;
+  }
+  
+  .top-controls {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .search-wrapper {
+    max-width: none;
+  }
+}
+
+/* Carbon Design System Overrides */
+.cds--search-input {
+  background-color: #ffffff;
+}
+
+.cds--btn--ghost:hover {
+  background-color: #e8e8e8;
+}
+
+.cds--checkbox-wrapper {
+  margin: 0;
+}
+
+.cds--checkbox-label::before {
+  border-color: #8d8d8d;
+}
+
+.cds--data-table {
+  background-color: transparent;
+}
+
+.cds--data-table thead {
+  background-color: #f4f4f4;
+}
+
+/* Focus States */
+.data-table tr:focus-within {
+  outline: 2px solid #0f62fe;
+  outline-offset: -2px;
+}
+
+.schema-name:focus,
+.table-name.clickable:focus,
+.column-name:focus {
+  outline: 2px solid #0f62fe;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .data-table th {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  .panel-header {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  .action-header {
+    background-color: #000000;
+    color: #ffffff;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .migration-controls,
+  .header-actions,
+  .refresh-btn {
+    display: none;
+  }
+  
+  .panels-container {
+    flex-direction: column;
+  }
+  
+  .panel {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+}
+
+
+.ddl-box {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ccc;
+  overflow-x: auto;
+  max-height: 300px;
+  white-space: pre-wrap;
+  margin-bottom: 10px;
+}
+
+
+
+.ddl-view-box {
+  max-height: 300px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-size: 13px;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  font-family: monospace;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}

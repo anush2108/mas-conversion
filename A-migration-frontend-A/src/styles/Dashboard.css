@@ -1,0 +1,89 @@
+.dashboard-container {
+  padding: 2rem 5rem;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+
+.dashboard-subtitle {
+  font-size: 1rem;
+  color: #6f6f6f;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+  margin-left: 1rem;
+}
+
+.card-icon {
+  color: #0f62fe;
+}
+
+.card.total .card-icon {
+  color: #0f62fe;
+}
+.card.success .card-icon {
+  color: #24a148;
+}
+.card.failure .card-icon {
+  color: #da1e28;
+}
+
+.card.total h3 {
+  color: #0f62fe;
+}
+.card.success h3 {
+  color: #24a148;
+}
+.card.failure h3 {
+  color: #da1e28;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+.chart-header h3 {
+  margin: 0;
+}
+
+.month-select {
+  width: 50px;
+  align-self: flex-end;
+  margin-left: 75rem;
+}
+
+
+.section-title {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  padding-left: 1rem;
+}
+
+.search-bar {
+  margin: 1rem;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}

@@ -1,0 +1,3 @@
+-- VIEW: MAXIMO.DPACOS
+CREATE OR REPLACE VIEW "MAXIMO"."DPACOS" AS
+select dpaos.nodeid,dpaos.osid,dpaos.name,dpaos.language,dpaos.version,dpaos.servicepack,dpaos.licensedorg,dpaos.licenseduser, dpaos.serialnumber,dpaos.manufacturer,dpaos.description,dpaos.build,dpaos.createdate,dpaos.changedate,dpaos.rowstamp,dpaos.characterset1,dpammanuvariant.manufacturername as cmanufacturer,dpammanuvariant.manufacturervar,dpammanuvariant.dpammanuvariantid, dpammanuvariant.rowstamp as rowstamp1, dpamosvariant.osname as cname,dpamosvariant.osvariant, dpamosvariant.dpamosvariantid,dpamosvariant.rowstamp as rowstamp2 from dpaos,dpammanuvariant,dpamosvariant where dpaos.manufacturer=dpammanuvariant.manufacturervar and dpaos.name=dpamosvariant.osvariant

@@ -1,0 +1,2 @@
+-- VIEW: MAXIMO.MAXPROPINSTANCE
+CREATE OR REPLACE VIEW "MAXIMO"."MAXPROPINSTANCE" ("ACCESSTYPE", "CHANGEBY", "CHANGEDATE", "ENCRYPTEDVALUE", "MAXPROPVALUEID", "PROPNAME", "PROPVALUE", "ROWSTAMP", "SERVERHOST", "SERVERNAME") AS SELECT maxpropvalue.accesstype, maxpropvalue.changeby, maxpropvalue.changedate, maxpropvalue.encryptedvalue, maxpropvalue.maxpropvalueid, maxpropvalue.propname, maxpropvalue.propvalue, maxpropvalue.rowstamp, maxpropvalue.serverhost, maxpropvalue.servername from maxpropvalue where servername not in ('COMMON');

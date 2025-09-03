@@ -1,0 +1,3 @@
+-- VIEW: MAXIMO.WOASSETUSERCUST
+CREATE OR REPLACE VIEW "MAXIMO"."WOASSETUSERCUST" AS
+select assetlocusercust.addperson, assetlocusercust.assetlocusercustid, assetlocusercust.assetnum, assetlocusercust.iscustodian, assetlocusercust.isprimary, assetlocusercust.isuser, assetlocusercust.location, assetlocusercust.modifyperson, assetlocusercust.multiid, assetlocusercust.orgid, assetlocusercust.personid, assetlocusercust.removeperson, assetlocusercust.rowstamp, assetlocusercust.siteid, assetlocusercust.willbecustodian, assetlocusercust.willbeprimary, assetlocusercust.willbeuser from assetlocusercust where assetnum is not null

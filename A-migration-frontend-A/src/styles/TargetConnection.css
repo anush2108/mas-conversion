@@ -1,0 +1,64 @@
+.target-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.test-btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.notification-box {
+  margin-top: 1rem;
+}
+
+.target-btn-group {
+  display: flex;
+  gap: 0rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.target-btn {
+  flex: 1;
+  border-radius: 0px;
+  min-height: 40px;
+}
+
+.target-btn-group button {
+  min-height: 48px;
+}
+
+/* and/or */
+.target-btn, .migrate-btn, .back-btn {
+  min-height: 48px !important;
+  box-sizing: border-box;
+}
+
+
+.migrate-btn {
+  min-height: 48px;
+}
+
+.migrate-btn:disabled {
+  background-color: #c6c6c6;
+  color: #8d8d8d;
+}
+
+@media (max-width: 768px) {
+  .target-btn-group {
+    flex-direction: column;
+    gap: 0rem;
+  }
+
+  .target-btn {
+    width: 100%;
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+
+  .test-btn {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,197 @@
+/* Container */
+.landing-options .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  margin-top: -5rem;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid: 2 above 2 below - cards wider */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 2.2rem 3.2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 2.2rem;
+}
+
+/* Card */
+.product-tile {
+  background: #fafbff;
+  border-radius: 1.3rem;
+  padding: 1.3rem 2.2rem 1.2rem 2.2rem;   /* Less vertical padding, more horizontal */
+  box-shadow: 0 8px 32px rgba(14, 53, 156, 0.07), 0 2px 6px rgba(0,0,0,0.01);
+  border: 1.5px solid #c6d6ef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 260px;                      /* Shorter cards */
+  max-width: 500px;                       /* Wider cards */
+  transition: box-shadow 0.18s, border-color 0.18s, transform 0.2s;
+  position: relative;
+  background-clip: padding-box;
+}
+
+/* The rest of your styles remain unchanged... */
+.product-tile:hover {
+  box-shadow: 0 14px 36px rgba(14,53,156,0.16), 0 2px 8px rgba(15,98,254,0.10);
+  border-color: #3485ff;
+  transform: translateY(-5px) scale(1.02);
+}
+
+.highlight-card {
+  border: 2px solid #0f62fe;
+  box-shadow: 0 16px 48px rgba(15,98,254,0.09);
+}
+.option-image {
+  width: 74px;
+  height: 74px;
+  object-fit: contain;
+  margin-bottom: 1.1rem;
+  border-radius: 9px;
+  background: #eaf2fd;
+  box-shadow: 0 2px 10px rgba(15,98,254,0.06);
+}
+.option-title {
+  font-size: 1.45rem;
+  color: #0043ce;
+  font-weight: 700;
+  margin-bottom: 0.55rem;
+  letter-spacing: 0.018em;
+}
+.option-description {
+  font-size: 1.04rem;
+  color: #212121;
+  margin-bottom: 1.15rem;
+  line-height: 1.44;
+  font-weight: 400;
+  max-width: 92%;
+}
+.option-features {
+  margin-top: 0.25rem;
+  text-align: left;
+  width: 100%;
+  padding-left: 0.25rem;
+}
+.option-features h4 {
+  margin-bottom: 0.55rem;
+  font-weight: 650;
+  color: #0f62fe;
+  font-size: 1.09rem;
+  letter-spacing: 0.013em;
+}
+.option-features ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.option-features li {
+  font-size: 1rem;
+  margin-bottom: 0.39rem;
+  color: #1966d2;
+  font-weight: 500;
+  position: relative;
+  line-height: 1.35;
+  padding-left: 1.5em;
+}
+.option-features li::before {
+  content: '✔';
+  position: absolute;
+  left: 0.2em;
+  top: 0.02em;
+  color: #27aa22;
+  font-size: 1.03em;
+  font-weight: 700;
+  opacity: 0.82;
+}
+.option-button-wrapper {
+  margin-top: auto;
+  width: 100%;
+  padding-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.option-button {
+  display: block;
+  width: 90%; /* Slight padding from card edges */
+  max-width: 400px;
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: 1.08rem;
+  text-align: center;
+  padding: 0.88rem 0;
+  border-radius: 9px;
+  background-image: linear-gradient(93deg, #0f62fe 55%, #2282fe 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 11px rgba(15,98,254,0.09);
+  transition: background 0.18s, box-shadow 0.17s, transform 0.13s;
+  cursor: pointer;
+  letter-spacing: 0.012em;
+  outline: none;
+  position: relative;
+}
+
+.option-button:hover:not(:disabled),
+.option-button:focus:not(:disabled) {
+  background-image: linear-gradient(93deg, #0043ce 60%, #2886ff 120%);
+  box-shadow: 0 6px 22px rgba(15,98,254,0.17);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.option-button:active:not(:disabled) {
+  background-image: linear-gradient(93deg, #0043ce 65%, #155bb3 100%);
+  box-shadow: 0 4px 14px rgba(15,98,254,0.13);
+  transform: scale(0.98);
+}
+
+.option-button:focus-visible {
+  outline: 2px solid #0f62fe;
+  outline-offset: 1px;
+}
+
+.option-button:disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
+  background: #dce3ed !important;
+  color: #888 !important;
+  box-shadow: none;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    max-width: 99vw;
+    gap: 1.2rem;
+    padding-bottom: 0;
+  }
+  .product-tile {
+    min-width: 220px;
+    width: 95%;
+    max-width: 98vw;
+    margin: 0 auto 0.8rem auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-heading {
+    font-size: 1.35rem;
+  }
+  .option-title {
+    font-size: 1.08rem;
+  }
+  .option-image {
+    width: 58px;
+    height: 58px;
+  }
+}

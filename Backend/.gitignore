@@ -1,0 +1,11 @@
+# Backend
+Backend/__pycache__/
+Backend/stored_credentials.json
+Backend/venv/
+Backend/.env
+
+
+# General
+*.log
+*.zip
+.DS_Store

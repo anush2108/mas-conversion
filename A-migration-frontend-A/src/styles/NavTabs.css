@@ -1,0 +1,53 @@
+/* Wraps the whole nav in center */
+.nav-tabs-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+/* Tabs bar itself */
+.nav-tabs {
+  display: flex;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+/* Each tab styling */
+.nav-tab {
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+  flex: 1;
+  text-align: center;
+  margin-left: 3rem;
+  border-radius: 6px;
+  
+}
+
+.nav-tab:hover {
+  background-color: #e0e0e0;
+}
+
+/* Active state */
+.nav-tab.active {
+  background-color: #0f62fe;
+  color: white;
+  font-weight: 700;
+  border-bottom: none;
+}
+
+/* Responsive handling */
+@media (max-width: 768px) {
+  .nav-tab {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}

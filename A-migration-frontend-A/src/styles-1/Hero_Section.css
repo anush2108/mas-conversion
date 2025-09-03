@@ -1,0 +1,63 @@
+/* styles/Hero_Section.css */
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+.hero-card {
+  position: relative;
+  border-radius: 1rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 3rem 2rem;
+  max-width: 1600px;
+  min-height: 500px;
+  width: 100%;
+  color: #FFFFFF;
+}
+.hero-content {
+  max-width: 600px;
+}
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0;
+  padding-top: 5rem;
+}
+.hero-content h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0 0 1rem 0;
+}
+.hero-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+.cta-button {
+  background: var(--text-light) !important; /* white */
+  color: var(--primary-blue) !important;
+  padding: 1rem 2.5rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  border-radius: 8px !important;
+  box-shadow: var(--shadow-light) !important;
+}
+
+.cta-button:hover {
+  background: var(--background-light) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover) !important;
+}

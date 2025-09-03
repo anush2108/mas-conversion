@@ -1,0 +1,66 @@
+.enterprise-highlights-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.highlights-title-area h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-gradient {
+  background: linear-gradient(90deg, #0f62fe, #8a3ffc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.highlights-title-area p {
+  font-size: 1.125rem;
+  color: #525252;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.highlight-cards-grid {
+  justify-content: center;
+  row-gap: 2rem;
+}
+
+.highlight-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-6px);
+}
+
+.highlight-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.highlight-icon {
+  fill: white;
+}
+
+.highlight-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-desc {
+  font-size: 1rem;
+  color: #525252;
+}

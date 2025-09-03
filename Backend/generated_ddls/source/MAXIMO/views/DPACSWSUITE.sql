@@ -1,0 +1,3 @@
+-- VIEW: MAXIMO.DPACSWSUITE
+CREATE OR REPLACE VIEW "MAXIMO"."DPACSWSUITE" AS
+select dpaswsuite.nodeid,dpaswsuite.suiteid,dpaswsuite.suitename,dpaswsuite.language,dpaswsuite.version, dpaswsuite.licensedorg,dpaswsuite.licenseduser,dpaswsuite.usagecount,dpaswsuite.lastusagedate,dpaswsuite.installdate, dpaswsuite.serialnumber,dpaswsuite.productid,dpaswsuite.manufacturer,dpaswsuite.description,dpaswsuite.createdate, dpaswsuite.changedate,dpaswsuite.dpaswsuiteid,dpaswsuite.rowstamp,dpammanuvariant.manufacturername as cmanufacturer, dpammanuvariant.manufacturervar,dpammanuvariant.dpammanuvariantid,dpammanuvariant.rowstamp as rowstamp1 from dpaswsuite,dpammanuvariant where dpaswsuite.manufacturer=dpammanuvariant.manufacturervar

@@ -1,0 +1,95 @@
+.data-validation-container {
+  padding: 2rem;
+  background-color: #f4f4f4;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.section-heading {
+  color: #0f62fe; /* Matches header blue */
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.section-description {
+  font-size: 1rem;
+  color: #6f6f6f;
+  margin-bottom: 2rem;
+}
+
+.table-selector {
+  margin-top: 1rem;
+  max-height: 300px;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.table-button {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.validate-btn {
+  margin: 1.5rem 0;
+}
+
+.validation-results {
+  margin-top: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.validation-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.validation-row:last-child {
+  border-bottom: none;
+}
+
+.column-name {
+  flex: 1;
+  font-weight: bold;
+}
+
+.data-type {
+  flex: 1;
+  text-align: center;
+}
+
+.status-icon {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.matched-icon {
+  color: #198038; /* green */
+}
+
+.mismatched-icon {
+  color: #da1e28; /* red */
+}
+
+.log-container {
+  margin-top: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 1rem;
+  border-radius: 6px;
+  max-height: 250px;
+  overflow-y: auto;
+  font-size: 0.875rem;
+  font-family: monospace;
+}

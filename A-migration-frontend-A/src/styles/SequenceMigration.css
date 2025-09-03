@@ -1,0 +1,195 @@
+/* Base layout to stick footer at bottom */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content expands to fill space */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+/* Content Layout */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.split-view .content-wrapper {
+  flex-direction: row;
+}
+
+/* Schema Panel full width initially */
+.schema-panel {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Shrink after schema selection */
+.split-view .schema-panel {
+  flex: 0 0 35%;
+}
+
+/* Sequence Section */
+.sequence-panel {
+  flex: 0 0 65%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Header with button */
+.sequence-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Scrollable area */
+.sequence-scroll {
+  flex-grow: 1;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1rem;
+  max-height: calc(100vh - 250px);
+  background: #fff; /* ensure bg so sticky header bg doesn't show through */
+}
+
+/* Data table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+/* Sticky header cells */
+.data-table thead th {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 2;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+  padding: 0.75rem;
+}
+
+/* Keep th and td consistent for alignment */
+.data-table th, .data-table td {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  word-break: break-word;
+}
+
+/* Optional: fix width for # column */
+.data-table thead th:first-child,
+.data-table tbody td:first-child {
+  width: 40px;
+}
+
+/* Hover row highlight */
+.data-table tr:hover {
+  background-color: #f4f4f4;
+}
+
+/* Logs styling */
+.migration-logs {
+  max-height: 400px;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 13px;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+/* Footer fixed at bottom */
+footer {
+  margin-top: auto;
+  background-color: #f4f4f4;
+  padding: 1rem 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Nav Tabs from your earlier setup */
+.nav-tabs {
+  display: flex;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0 2rem;
+  margin: 0;
+}
+
+.nav-tab {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #525252;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-tab:hover {
+  color: #161616;
+  background-color: #e8e8e8;
+}
+
+.nav-tab.active {
+  color: #0f62fe;
+  border-bottom-color: #0f62fe;
+  background-color: #ffffff;
+  font-weight: 500;
+}
+
+/* Scrollbar styling */
+.sequence-scroll::-webkit-scrollbar,
+.migration-logs::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sequence-scroll::-webkit-scrollbar-thumb,
+.migration-logs::-webkit-scrollbar-thumb {
+  background-color: #d0d0d0;
+  border-radius: 4px;
+}
+.sequence-scroll {
+  flex-grow: 1;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1rem;
+  max-height: calc(100vh - 250px);
+  background: #fff;
+}
+
+/* Scrollbar styling */
+.sequence-scroll::-webkit-scrollbar,
+.migration-logs::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sequence-scroll::-webkit-scrollbar-thumb,
+.migration-logs::-webkit-scrollbar-thumb {
+  background-color: #d0d0d0;
+  border-radius: 4px;
+}

@@ -1,0 +1,2 @@
+-- VIEW: MAXIMO.RECONCOMPRULE
+CREATE OR REPLACE VIEW "MAXIMO"."RECONCOMPRULE" ("COMPSET", "DESCRIPTION", "FULLCICOMPARE", "HASLD", "LANGCODE", "RECONRULEID", "RECONTYPE", "ROWSTAMP", "RULENAME", "RULETYPE") AS SELECT reconrule.compset, reconrule.description, reconrule.fullcicompare, reconrule.hasld, reconrule.langcode, reconrule.reconruleid, reconrule.recontype, reconrule.rowstamp, reconrule.rulename, reconrule.ruletype from reconrule where ruletype='COMPARISON';

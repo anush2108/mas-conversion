@@ -1,0 +1,229 @@
+# # config/embedded_sql.yml
+# allowed_table_columns:
+#   - table: ANALYTICDATASET
+#     column: CLAUSENAME
+#   - table: ATTRFORMULACOND
+#     column: CONDITION
+#   - table: AUTOSCRIPT
+#     column: SOURCE
+#   - table: BUDGETANALYSISAXISNUMBER
+#     column: CONDITION
+#   - table: CONDITION
+#     column: EXPRESSION
+#   - table: CRONTASKPARAM
+#     column: VALUE
+#   - table: LAUNCHPOINTVARS
+#     column: VARBINDINGVALUE
+#   - table: DEFAULTQUERY
+#     column: CLAUSENAME
+#   - table: DMCFGOBJECT
+#     column: CONDITION
+#   - table: DMPKGCFGOBJDEF
+#     column: WHERECLAUSE
+#   - table: ESCREFPOINT
+#     column: CONDITION
+#   - table: ESCALATION
+#     column: CONDITION
+#   - table: ESCREFPOINT
+#     column: EVENTCONDITION
+#   - table: JOBITEM
+#     column: CALCEXPRESSIONHOURS
+#   - table: JOBITEM
+#     column: CALCEXPRESSION
+#   - table: JOBLABOR
+#     column: CALCEXPRESSION
+#   - table: JOBLABOR
+#     column: CALCEXPRESSIONHOURS
+#   - table: JOBMATERIAL
+#     column: CALCEXPRESSION
+#   - table: JOBMATERIAL
+#     column: CALCEXPRESSIONHOURS
+#   - table: JOBSERVICE
+#     column: CALCEXPRESSION
+#   - table: JOBSERVICE
+#     column: CALCEXPRESSIONHOURS
+#   - table: JOBTASK
+#     column: CALCEXPRESSION
+#   - table: JOBTOOL
+#     column: CALCEXPRESSIONHOURS
+#   - table: JOBTOOL
+#     column: CALCEXPRESSION
+#   - table: KPIMAIN
+#     column: CLAUSE
+#   - table: KPIMAIN
+#     column: SELECTSTMT
+#   - table: LAYOUT
+#     column: QUERYCLAUSENAME
+#   - table: LAYOUT
+#     column: RSCONDITIONATTR
+#   - table: LRKEYS
+#     column: LITERALKEY
+#   - table: MAXAICONFIG
+#     column: TRAININGQUERY
+#   - table: MAXAICONFIG
+#     column: INFERENCEQUERY
+#   - table: MAXCONDDETAIL
+#     column: CONDITION
+#   - table: MAXDYNAMICDOMLINK
+#     column: UPDATEWHERE
+#   - table: MAXOBJECTCFG
+#     column: VIEWWHERE
+#   - table: MAXRELATIONSHIP
+#     column: WHERECLAUSE
+#   - table: MAXTABLEDOMAIN
+#     column: LISTWHERECLAUSE
+#   - table: MAXTABLEDOMAIN
+#     column: VALIDTNWHERECLAUSE
+#   - table: MAXVIEWCFG
+#     column: VIEWSELECT
+#   - table: MAXVIEWCFG
+#     column: VIEWWHERE
+#   - table: MAXVIEW
+#     column: VIEWSELECT
+#   - table: MAXVIEW
+#     column: VIEWWHERE
+#   - table: MAXVIEW
+#     column: VIEWFROM
+#   - table: MAXIFACEEXPORT
+#     column: EXPORTWHERE
+#   - table: OBJECTFORMULACOND
+#     column: CONDITION
+#   - table: OSLCQUERY
+#     column: CLAUSENAME
+#   - table: OSLCQUERY
+#     column: CLAUSE
+#   - table: PLUSGACCESSPERMIT
+#     column: SAFECONDITION
+#   - table: QUERYRECORDSTATE
+#     column: CLAUSENAME
+#   - table: QUERY
+#     column: CLAUSE
+#   - table: REPORTADHOC
+#     column: WHERECLAUSE
+#   - table: REPORTWHERE
+#     column: WHEREPARAM
+#   - table: SCRIPTLAUNCHPOINT
+#     column: CONDITION
+#   - table: USERQUERY
+#     column: CLAUSENAME
+#   - table: WFCONDITION
+#     column: CONDITION
+#   - table: WORKQUEUE
+#     column: CLAUSENAME
+#   - table: WORKSCAPELAYOUT
+#     column: SAVEDQUERY
+
+
+
+
+
+
+allowed_table_columns:
+  - table: ANALYTICDATASET
+    column: CLAUSENAME
+    identifier_column_name: ATTRIBUTENAME
+  - table: ATTRFORMULACOND
+    column: CONDITION
+    identifier_column_name: ATTRIBUTENAME
+  - table: AUTOSCRIPT
+    column: SOURCE
+    identifier_column_name: AUTOSCRIPT
+  - table: CONDITION
+    column: EXPRESSION
+    identifier_column_name: CONDITIONNUM
+  - table: CRONTASKPARAM
+    column: VALUE
+    identifier_column_name: CRONTASKNAME
+  - table: LAUNCHPOINTVARS
+    column: VARBINDINGVALUE
+    identifier_column_name: LAUNCHPOINTNAME
+  - table: DMCFGOBJECT
+    column: CONDITION
+    identifier_column_name: CFGOBJECT
+  - table: DMPKGCFGOBJDEF
+    column: WHERECLAUSE
+    identifier_column_name: CFGOBJECT
+  - table: ESCREFPOINT
+    column: CONDITION
+    identifier_column_name: ESCALATION
+  - table: ESCALATION
+    column: CONDITION
+    identifier_column_name: ESCALATION
+  - table: ESCREFPOINT
+    column: EVENTCONDITION
+    identifier_column_name: ESCALATION
+  - table: KPIMAIN
+    column: CLAUSE
+    identifier_column_name: KPINAME
+  - table: KPIMAIN
+    column: SELECTSTMT
+    identifier_column_name: KPINAME
+  - table: LAYOUT
+    column: QUERYCLAUSENAME
+    identifier_column_name: PORTLETID
+  - table: LAYOUT
+    column: RSCONDITIONATTR
+    identifier_column_name: PORTLETID
+  - table: MAXOBJECTCFG
+    column: VIEWWHERE
+    identifier_column_name: OBJECTNAME
+  - table: MAXRELATIONSHIP
+    column: WHERECLAUSE
+    identifier_column_name: NAME
+  - table: MAXTABLEDOMAIN
+    column: LISTWHERECLAUSE
+    identifier_column_name: DOMAINID
+  - table: MAXTABLEDOMAIN
+    column: VALIDTNWHERECLAUSE
+    identifier_column_name: DOMAINID
+  - table: MAXVIEWCFG
+    column: VIEWSELECT
+    identifier_column_name: VIEWNAME
+  - table: MAXVIEWCFG
+    column: VIEWWHERE
+    identifier_column_name: VIEWNAME
+  - table: MAXVIEW
+    column: VIEWSELECT
+    identifier_column_name: VIEWNAME
+  - table: MAXVIEW
+    column: VIEWWHERE
+    identifier_column_name: VIEWNAME
+  - table: MAXVIEW
+    column: VIEWFROM
+    identifier_column_name: VIEWNAME
+  - table: MAXIFACEEXPORT
+    column: EXPORTWHERE
+    identifier_column_name: IFACENAME
+  - table: OBJECTFORMULACOND
+    column: CONDITION
+    identifier_column_name: OBJECTNAME
+  - table: OSLCQUERY
+    column: CLAUSENAME
+    identifier_column_name: INTOBJECTNAME
+  - table: OSLCQUERY
+    column: CLAUSE
+    identifier_column_name: INTOBJECTNAME
+  - table: QUERY
+    column: CLAUSE
+    identifier_column_name: CLAUSENAME
+  - table: REPORTADHOC
+    column: WHERECLAUSE
+    identifier_column_name: REPORTNAME
+  - table: REPORTWHERE
+    column: WHEREPARAM
+    identifier_column_name: USERID
+  - table: SCRIPTLAUNCHPOINT
+    column: CONDITION
+    identifier_column_name: LAUNCHPOINTNAME
+  - table: USERQUERY
+    column: CLAUSENAME
+    identifier_column_name: "?"
+  - table: WFCONDITION
+    column: CONDITION
+    identifier_column_name: PROCESSNAME
+  - table: WORKQUEUE
+    column: CLAUSENAME
+    identifier_column_name: "?"
+  - table: WORKSCAPELAYOUT
+    column: SAVEDQUERY
+    identifier_column_name: KPINAME

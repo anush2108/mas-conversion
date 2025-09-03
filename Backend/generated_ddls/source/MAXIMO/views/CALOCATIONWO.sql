@@ -1,0 +1,3 @@
+-- VIEW: MAXIMO.CALOCATIONWO
+CREATE OR REPLACE VIEW "MAXIMO"."CALOCATIONWO" AS
+select locations.siteid, locations.orgid, locations.location, locations.description, locations.health, locations.installdate, workorder.wonum, workorder.worktype, workorder.statusdate, workorder.pmnextduedate from locations, workorder where locations.location=workorder.location and locations.siteid=workorder.siteid and workorder.istask=0 and workorder.status in (select value from synonymdomain where domainid='WOSTATUS' and maxvalue in ('CLOSE', 'COMP')) and exists(select 1 from worktype where worktype.orgid = workorder.orgid and worktype.woclass = workorder.woclass and worktype.worktype=workorder.worktype and ahcondassess=1)
