@@ -16,7 +16,7 @@ const AccountSettings = () => {
   useEffect(() => {
     const validateSession = async () => {
       try {
-        const res = await fetch("http://localhost:8000/auth/account", {
+        const res = await fetch("https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/auth/account", {
           credentials: "include",
         });
         const data = await res.json();
@@ -66,7 +66,7 @@ const AccountSettings = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:8000/auth/account/change-password", {
+      const res = await fetch("https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/auth/account/change-password", {
         method: "POST",
         credentials: "include",
         headers: {
