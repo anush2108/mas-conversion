@@ -1,6 +1,6 @@
 # connections/oracle_connection.py
 import oracledb
-oracledb.init_oracle_client(lib_dir=None)
+# oracledb.init_oracle_client(lib_dir=None)
 
 def test_oracle_connection_custom(details):
     if getattr(details, "sid", None):
@@ -22,7 +22,7 @@ def test_oracle_connection_custom(details):
 
 
 import oracledb
-oracledb.init_oracle_client(lib_dir=None)
+# oracledb.init_oracle_client(lib_dir=None)
 from utils.credentials_store import load_credentials
 
 def get_oracle_connection(details=None):
@@ -47,4 +47,4 @@ def get_oracle_connection(details=None):
     else:
         dsn = oracledb.makedsn(details["host"], int(details["port"]), sid=details.get("sid"))
 
-    return oracledb.connect(user=details["username"], password=details["password"], dsn=dsn)
+    return oracledb.connect(user=details["username"], password=details["password"], dsn=dsn, mode=oracledb.DEFAULT_AUTH, thick_mode=False)
