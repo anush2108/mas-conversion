@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
   // Optional: logout helper function
   const logout = async () => {
     try {
-      await fetch("http://localhost:8000/auth/logout", {
+      await fetch("https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/auth/logout", {
         method: "POST",
         credentials: "include",
       });
