@@ -1,7 +1,7 @@
 # services/oracle_service.py
 import logging
 import oracledb
-oracledb.init_oracle_client(lib_dir=None)
+# oracledb.init_oracle_client(lib_dir=None)
 from typing import List, Dict, Any, Generator, Union
 import threading
 from utils.credentials_store import load_credentials
