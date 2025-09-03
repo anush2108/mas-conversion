@@ -10,7 +10,7 @@ import {
   CodeSnippet,
 } from "@carbon/react";
 
-const BackendBaseUrl = "http://localhost:8000";
+const BackendBaseUrl = "https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com";
 
 const objectTypes = [
   { key: "table", text: "Tables" },
