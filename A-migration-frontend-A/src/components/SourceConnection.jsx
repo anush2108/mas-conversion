@@ -105,7 +105,7 @@ const SourceConnection = ({
       connection_type: oracleConnectionType,
     };
     try {
-      const response = await fetch("http://localhost:8000/test-connection", {
+      const response = await fetch("https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/test-connection", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
