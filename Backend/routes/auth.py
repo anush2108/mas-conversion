@@ -36,7 +36,7 @@ async def login_proxy(request: Request):
     async with httpx.AsyncClient() as client:
         response = await client.post(
             f"{COUCHDB_URL}/_session",
-            data=f"name={email}&password={password}",
+            data={"name": email, "password": password},
             headers={"Content-Type": "application/x-www-form-urlencoded"}
         )
 
