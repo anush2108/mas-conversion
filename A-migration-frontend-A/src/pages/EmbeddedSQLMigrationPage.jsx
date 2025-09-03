@@ -16,7 +16,7 @@ import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import "../styles/EmbeddedSQLMigrationPage.css";
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com";
 const EmbeddedSQLMigrationPage = () => {
   const [allowedTableColumns, setAllowedTableColumns] = useState([]);
   const [selectedPair, setSelectedPair] = useState(null);
