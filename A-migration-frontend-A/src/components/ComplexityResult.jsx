@@ -9,7 +9,7 @@ import {
 } from "@carbon/icons-react";
 import "../styles/ComplexityResult.css";
 
-const API_BASE = process.env.REACT_APP_API_BASE || "https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/";
+const API_BASE = process.env.REACT_APP_API_BASE || "https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com";
 const COMPLEXITY_MAP = {
   "Low Complexity": "Low",
   "Medium Complexity": "Medium",
