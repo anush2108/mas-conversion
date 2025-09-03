@@ -41,7 +41,7 @@ app = FastAPI(title="DB Migration API")
 # -------------------------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Change to your frontend domain if needed
+    allow_origins=["*"],  # Change to your frontend domain if needed
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
