@@ -4,7 +4,7 @@ import json
 import os
 from typing import Dict, Optional
 
-CREDENTIALS_FILE = "/tmp/stored_credentials.json"
+CREDENTIALS_FILE = "stored_credentials.json"
 
 def load_all_credentials() -> Dict:
     if not os.path.exists(CREDENTIALS_FILE):
