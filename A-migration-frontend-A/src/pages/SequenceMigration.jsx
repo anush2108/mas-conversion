@@ -39,7 +39,7 @@ const SequenceMigration = () => {
     setLoadingSequences(true);
     try {
       // Fixed to match backend
-      const res = await fetch(`https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/sequences${apiPrefix}/${schema}/list`);
+      const res = await fetch(`https://backend-mas-conversion.apps.6890779dfbf8f4f78fdef06a.am1.techzone.ibm.com/sequences${apiPrefix}/${schema}/list`);
       const data = await res.json();
       setSequences(Array.isArray(data.sequences) ? data.sequences : []);
     } catch (err) {
@@ -81,7 +81,7 @@ const SequenceMigration = () => {
       eventSourceRef.current = null;
     }
 
-    const url = `https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/sequences/migrate/stream?source_type=${sourceDbType}&schema=${selectedSchema}&transaction_id=${transactionId}`;
+    const url = `https://backend-mas-conversion.apps.6890779dfbf8f4f78fdef06a.am1.techzone.ibm.com/sequences/migrate/stream?source_type=${sourceDbType}&schema=${selectedSchema}&transaction_id=${transactionId}`;
 
     const es = new EventSource(url);
     eventSourceRef.current = es;

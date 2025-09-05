@@ -54,7 +54,7 @@ const TableMigration = () => {
 
   const fetchSchemaObjects = async (schema) => {
     try {
-      const res = await fetch(`https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/${contextType}?schema=${schema}&source=${sourceDbType}`);
+      const res = await fetch(`https://backend-mas-conversion.apps.6890779dfbf8f4f78fdef06a.am1.techzone.ibm.com/${contextType}?schema=${schema}&source=${sourceDbType}`);
       const data = await res.json();
       setSchemaObjects(Array.isArray(data) ? data : []);
     } catch (e) {
@@ -110,7 +110,7 @@ const TableMigration = () => {
     }
 
     const queryParams = Array.from(selectedTables).map((t) => `tables=${encodeURIComponent(t)}`).join("&");
-    const url = `https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/migrate-tables/${sourceDbType}/${selectedSchema}/stream?${queryParams}&include_empty=true&transaction_id=${transactionId}`;
+    const url = `https://backend-mas-conversion.apps.6890779dfbf8f4f78fdef06a.am1.techzone.ibm.com/migrate-tables/${sourceDbType}/${selectedSchema}/stream?${queryParams}&include_empty=true&transaction_id=${transactionId}`;
 
     const eventSource = new EventSource(url);
     eventSourceRef.current = eventSource;
@@ -149,7 +149,7 @@ const TableMigration = () => {
     if (showStatusModal && transactionId) {
       intervalId = setInterval(async () => {
         try {
-          const res = await fetch(`https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/migration-status/${transactionId}`);
+          const res = await fetch(`https://backend-mas-conversion.apps.6890779dfbf8f4f78fdef06a.am1.techzone.ibm.com/migration-status/${transactionId}`);
           if (res.ok) {
             const data = await res.json();
             setObjectsProgress(data.objects || []);

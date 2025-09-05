@@ -132,7 +132,7 @@ const FullSchemaMigration = () => {
     setShowStatusModal(true);
     lastActivityRef.current = Date.now();
 
-    const eventSourceUrl = `https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/full-migration/all/stream?source_type=${sourceDbType}&schema=${selectedSchema}&transaction_id=${transactionId}`;
+    const eventSourceUrl = `https://backend-mas-conversion.apps.6890779dfbf8f4f78fdef06a.am1.techzone.ibm.com/full-migration/all/stream?source_type=${sourceDbType}&schema=${selectedSchema}&transaction_id=${transactionId}`;
 
     if (eventSourceRef.current) eventSourceRef.current.close();
 

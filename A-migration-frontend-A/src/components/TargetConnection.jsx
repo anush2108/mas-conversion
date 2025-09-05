@@ -42,7 +42,7 @@ const TargetConnection = ({ open, onClose, onBack, sourceDb, sourceConnection })
       return;
     }
     try {
-      const response = await fetch("https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/test-connection", {
+      const response = await fetch("https://backend-mas-conversion.apps.6890779dfbf8f4f78fdef06a.am1.techzone.ibm.com/test-connection", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ db_type: "db2", ...targetDetails }),

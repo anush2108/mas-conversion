@@ -20,7 +20,7 @@ const TableDataView = () => {
   useEffect(() => {
     if (!schema || !table) return;
 
-    fetch(`https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com${apiPrefix}/${schema}/${table}`)
+    fetch(`https://backend-mas-conversion.apps.6890779dfbf8f4f78fdef06a.am1.techzone.ibm.com${apiPrefix}/${schema}/${table}`)
       .then((res) => res.json())
       .then(setData)
       .catch(console.error)
@@ -52,7 +52,7 @@ const TableDataView = () => {
     setMigrating(true);
     try {
       const res = await fetch(
-        `https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com${apiPrefix}/${schema}/${table}/migrate`,
+        `https://backend-mas-conversion.apps.6890779dfbf8f4f78fdef06a.am1.techzone.ibm.com${apiPrefix}/${schema}/${table}/migrate`,
         {
           method: "POST",
         }

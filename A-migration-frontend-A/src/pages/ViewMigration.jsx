@@ -32,7 +32,7 @@ const ViewMigration = () => {
   const [migrationLogs, setMigrationLogs] = useState([]);
   const [migrating, setMigrating] = useState(false);
 
-  const viewApiPrefix = "https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/views";
+  const viewApiPrefix = "https://backend-mas-conversion.apps.6890779dfbf8f4f78fdef06a.am1.techzone.ibm.com/views";
 
   const fetchViews = async (schema) => {
     setSelectedSchema(schema);

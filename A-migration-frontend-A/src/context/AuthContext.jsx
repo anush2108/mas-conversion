@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkLogin = async () => {
       try {
-        const res = await fetch("https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/auth/account", {
+        const res = await fetch("https://backend-mas-conversion.apps.6890779dfbf8f4f78fdef06a.am1.techzone.ibm.com/auth/account", {
           credentials: "include",
         });
         if (res.ok) {
@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
   // Optional: logout helper function
   const logout = async () => {
     try {
-      await fetch("https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/auth/logout", {
+      await fetch("https://backend-mas-conversion.apps.6890779dfbf8f4f78fdef06a.am1.techzone.ibm.com/auth/logout", {
         method: "POST",
         credentials: "include",
       });

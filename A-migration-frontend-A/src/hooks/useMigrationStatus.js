@@ -16,7 +16,7 @@ export function useMigrationStatus(transactionId, sourceType, schema) {
     try {
       setLoading(true);
       const res = await axios.get(
-        `https://mas-migration-backend-1-open-db.apps.itz-47ubpb.infra01-lb.dal14.techzone.ibm.com/migration-status/${transactionId}`,
+        `https://backend-mas-conversion.apps.6890779dfbf8f4f78fdef06a.am1.techzone.ibm.com/migration-status/${transactionId}`,
         {
           params: {
             source_type: sourceType,
